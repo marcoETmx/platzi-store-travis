@@ -9,8 +9,15 @@ git:
   depth: 3
 script:
   - yarn build
+notifications:
+  email:
+    recipients:
+      - m.elizalde.torres@gmail.com
+    on_success: always
+    on_failure: always
 deploy:
   provider: pages
+  skip_cleanup: true
   keep_history: true
   github_token: $GITHUB_TOKEN
   local_dir: dist/
